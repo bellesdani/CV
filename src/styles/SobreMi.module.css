@@ -1,0 +1,141 @@
+.section { animation: fadeIn 0.25s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.heroName {
+  font-family: var(--sans);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 14px;
+}
+
+.heroName em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.heroDesc {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.tag {
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--border2);
+  color: var(--muted2);
+  background: var(--bg2);
+  transition: all 0.15s;
+  cursor: default;
+}
+
+.tag:hover {
+  border-color: var(--accent2);
+  color: var(--accent);
+  background: #14121e;
+}
+
+.tagAccent {
+  border-color: #251f38;
+  color: var(--accent);
+  background: #14121e;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.infoCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
+}
+
+.infoCard:hover { border-color: var(--border2); }
+
+.infoLabel {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.infoValue {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hobbyChip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.hobbyChip:hover {
+  border-color: var(--border2);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.hobbyIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  background: #12151d;
+  border: 1px solid #1f2534;
+  color: #8ea2d8;
+  flex-shrink: 0;
+}
+
+.hobbyIconSvg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}

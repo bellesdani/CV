@@ -1,0 +1,23 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid #1f3a2a;
+  background: rgba(19, 54, 34, 0.35);
+  margin-bottom: 14px;
+}
+
+.commentSlash {
+  color: #66d492;
+  font-weight: 700;
+}
+
+.commentText {
+  color: #4cb575;
+}
