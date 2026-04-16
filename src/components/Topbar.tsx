@@ -6,9 +6,11 @@ import styles from '../styles/Topbar.module.css'
 
 interface Props {
   active: SectionId
+  isMobileMenuOpen: boolean
+  onToggleMobileMenu: () => void
 }
 
-export default function Topbar({ active }: Props) {
+export default function Topbar({ active, isMobileMenuOpen, onToggleMobileMenu }: Props) {
   const { locale, setLocale, content } = useI18n()
   const { mode, setMode } = useTheme()
 
@@ -21,6 +23,17 @@ export default function Topbar({ active }: Props) {
   return (
     <header className={styles.topbar}>
       <div className={styles.left}>
+        <button
+          type="button"
+          className={styles.menuButton}
+          onClick={onToggleMobileMenu}
+          aria-label={isMobileMenuOpen ? 'Close side menu' : 'Open side menu'}
+          aria-expanded={isMobileMenuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         <span className={styles.logo}>
           <span className={styles.logoAccent}>daniel</span>.dev
         </span>

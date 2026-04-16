@@ -6,6 +6,7 @@ import styles from '../styles/Sidebar.module.css'
 interface Props {
   active: SectionId
   onNavigate: (id: SectionId) => void
+  isMobileOpen?: boolean
 }
 
 const NAV_ICONS: Record<SectionId, JSX.Element> = {
@@ -28,11 +29,12 @@ const NAV_ICONS: Record<SectionId, JSX.Element> = {
   ),
 }
 
-export default function Sidebar({ active, onNavigate }: Props) {
+export default function Sidebar({ active, onNavigate, isMobileOpen = false }: Props) {
   const { content } = useI18n()
+  const sidebarClassName = `${styles.sidebar} ${isMobileOpen ? styles.sidebarOpen : ''}`
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={sidebarClassName}>
       <div className={styles.avatarBlock}>
         <div className={styles.avatar}>DB</div>
         <div>

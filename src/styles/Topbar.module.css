@@ -15,6 +15,28 @@
   gap: 20px;
 }
 
+.menuButton {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 7px;
+  cursor: pointer;
+}
+
+.menuButton span {
+  width: 100%;
+  height: 1.5px;
+  background: var(--text);
+  border-radius: 999px;
+  display: block;
+}
+
 .logo {
   font-family: var(--mono);
   font-size: 12px;
@@ -118,6 +140,10 @@
   .left {
     gap: 10px;
     min-width: 0;
+  }
+
+  .menuButton {
+    display: inline-flex;
   }
 
   .breadcrumb {

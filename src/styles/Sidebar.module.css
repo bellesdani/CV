@@ -147,3 +147,21 @@
   background: var(--muted);
   flex-shrink: 0;
 }
+
+@media (max-width: 880px) {
+  .sidebar {
+    position: fixed;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    width: min(82vw, 320px);
+    z-index: 40;
+    transform: translateX(-110%);
+    transition: transform 0.22s ease;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+}
