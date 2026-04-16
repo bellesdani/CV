@@ -1,5 +1,5 @@
 import type { JSX } from 'react'
-import { NAV_ITEMS } from '../assets/cv'
+import { useI18n } from '../i18n/I18nProvider'
 import type { SectionId } from '../types'
 import styles from '../styles/Sidebar.module.css'
 
@@ -29,19 +29,21 @@ const NAV_ICONS: Record<SectionId, JSX.Element> = {
 }
 
 export default function Sidebar({ active, onNavigate }: Props) {
+  const { content } = useI18n()
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.avatarBlock}>
         <div className={styles.avatar}>DB</div>
         <div>
-          <div className={styles.name}>Daniel Belles</div>
-          <div className={styles.role}>Fullstack Developer</div>
+          <div className={styles.name}>{content.copy.sidebarName}</div>
+          <div className={styles.role}>{content.copy.sidebarRole}</div>
         </div>
       </div>
 
       <nav className={styles.nav}>
-        <div className={styles.navLabel}>navegacion</div>
-        {NAV_ITEMS.map(item => (
+        <div className={styles.navLabel}>{content.copy.sidebarNavigationLabel}</div>
+        {content.navItems.map(item => (
           <button
             key={item.id}
             className={`${styles.navItem} ${active === item.id ? styles.navItemActive : ''}`}
@@ -54,23 +56,25 @@ export default function Sidebar({ active, onNavigate }: Props) {
       </nav>
 
       <div className={styles.bottom}>
-        <a className={styles.contactItem} href="mailto:bellesdani@gmail.com">
-          <span className={styles.contactDot} />
-          bellesdani@gmail.com
-        </a>
-        <a
-          className={styles.contactItem}
-          href="https://linkedin.com/in/daniel-belles-vallet"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className={styles.contactDot} />
-          linkedin / daniel-belles-vallet
-        </a>
-        <a className={styles.contactItem} href="tel:+34601073561">
-          <span className={styles.contactDot} />
-          +34 601 073 561
-        </a>
+        {content.contactItems.map(item => (
+          item.href ? (
+            <a
+              key={`${item.type}-${item.value}`}
+              className={styles.contactItem}
+              href={item.href}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+            >
+              <span className={styles.contactDot} />
+              {item.value}
+            </a>
+          ) : (
+            <div key={`${item.type}-${item.value}`} className={styles.contactItem}>
+              <span className={styles.contactDot} />
+              {item.value}
+            </div>
+          )
+        ))}
       </div>
     </aside>
   )

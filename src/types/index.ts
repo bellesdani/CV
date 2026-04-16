@@ -1,8 +1,19 @@
 export type SectionId = 'sobre-mi' | 'experiencia' | 'stack'
+export type Locale = 'es' | 'en' | 'fr' | 'it'
 
 export interface NavItem {
   id: SectionId
   label: string
+}
+
+export interface HeroTag {
+  label: string
+  accent: boolean
+}
+
+export interface InfoCard {
+  label: string
+  value: string
 }
 
 export interface Experience {
@@ -12,6 +23,11 @@ export interface Experience {
   description: string
   tags: string[]
   current?: boolean
+}
+
+export interface ProjectItem {
+  title: string
+  description: string
 }
 
 export interface EducationItem {

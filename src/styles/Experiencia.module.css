@@ -132,6 +132,35 @@
   color: var(--muted2);
 }
 
+.projectsIntro {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.projectsGrid {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.projectCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.projectDescription {
+  margin-top: 8px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted2);
+}
+
 .tags {
   margin-top: 12px;
   display: flex;
@@ -142,8 +171,8 @@
 .tag {
   padding: 4px 10px;
   border-radius: 999px;
-  background: #14121e;
-  border: 1px solid #251f38;
+  background: var(--surface-accent-bg);
+  border: 1px solid var(--surface-accent-border);
   font-family: var(--mono);
   font-size: 9px;
   color: var(--accent);

@@ -1,17 +1,19 @@
-import { STACK } from '../assets/cv'
 import { StackIcon } from '../components/CvIcons'
+import { useI18n } from '../i18n/I18nProvider'
 import SectionEyebrow from '../components/SectionEyebrow'
 import styles from '../styles/Stack.module.css'
 
 export default function Stack() {
+  const { content } = useI18n()
+
   return (
     <div className={styles.section}>
-      <SectionEyebrow label="// conocimientos-tecnicos" />
+      <SectionEyebrow label={content.copy.stackEyebrow} />
       <p className={styles.intro}>
-        Nivel orientativo segun experiencia real en proyectos, mantenimiento y soporte en produccion.
+        {content.copy.stackIntro}
       </p>
 
-      {STACK.map(category => (
+      {content.stack.map(category => (
         <div key={category.title} className={styles.categoryBlock}>
           <div className={styles.categoryTitle}>{category.title}</div>
           <div className={styles.grid}>

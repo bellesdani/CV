@@ -8,16 +8,16 @@
   text-transform: lowercase;
   padding: 4px 9px;
   border-radius: 999px;
-  border: 1px solid #1f3a2a;
-  background: rgba(19, 54, 34, 0.35);
+  border: 1px solid var(--eyebrow-border);
+  background: var(--eyebrow-bg);
   margin-bottom: 14px;
 }
 
 .commentSlash {
-  color: #66d492;
+  color: var(--eyebrow-slash);
   font-weight: 700;
 }
 
 .commentText {
-  color: #4cb575;
+  color: var(--eyebrow-text);
 }

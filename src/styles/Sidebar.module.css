@@ -95,8 +95,8 @@
 
 .navItemActive {
   color: var(--accent) !important;
-  background: #14121e !important;
-  border-color: #251f38 !important;
+  background: var(--surface-accent-bg) !important;
+  border-color: var(--surface-accent-border) !important;
 }
 
 .navItemActive .navIcon {

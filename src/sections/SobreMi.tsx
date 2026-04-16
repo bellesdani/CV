@@ -1,12 +1,14 @@
-import { HERO_TAGS, HOBBIES, INFO_CARDS } from '../assets/cv'
 import { HobbyIcon } from '../components/CvIcons'
+import { useI18n } from '../i18n/I18nProvider'
 import SectionEyebrow from '../components/SectionEyebrow'
 import styles from '../styles/SobreMi.module.css'
 
 export default function SobreMi() {
+  const { content } = useI18n()
+
   return (
     <div className={styles.section}>
-      <SectionEyebrow label="// sobre-mi" />
+      <SectionEyebrow label={content.copy.aboutEyebrow} />
 
       <h1 className={styles.heroName}>
         Daniel
@@ -15,15 +17,15 @@ export default function SobreMi() {
       </h1>
 
       <p className={styles.heroDesc}>
-        Tecnico Superior en Desarrollo de Aplicaciones Web.
+        {content.copy.aboutIntroLines[0]}
         <br />
-        Perfil informatico con experiencia en desarrollo y operativa IT.
+        {content.copy.aboutIntroLines[1]}
         <br />
-        Del frontend al sistema, con incorporacion inmediata.
+        {content.copy.aboutIntroLines[2]}
       </p>
 
       <div className={styles.tags}>
-        {HERO_TAGS.map(tag => (
+        {content.heroTags.map(tag => (
           <span
             key={tag.label}
             className={`${styles.tag} ${tag.accent ? styles.tagAccent : ''}`.trim()}
@@ -34,7 +36,7 @@ export default function SobreMi() {
       </div>
 
       <div className={styles.infoGrid}>
-        {INFO_CARDS.map(card => (
+        {content.infoCards.map(card => (
           <div key={card.label} className={styles.infoCard}>
             <div className={styles.infoLabel}>{card.label}</div>
             <div className={styles.infoValue}>{card.value}</div>
@@ -42,13 +44,13 @@ export default function SobreMi() {
         ))}
       </div>
 
-      <SectionEyebrow label="// fuera del trabajo" style={{ marginTop: 8 }} />
+      <SectionEyebrow label={content.copy.hobbiesEyebrow} style={{ marginTop: 8 }} />
 
       <div className={styles.hobbies}>
-        {HOBBIES.map(h => (
+        {content.hobbies.map(h => (
           <div key={h.label} className={styles.hobbyChip}>
             <span className={styles.hobbyIcon}>
-              <HobbyIcon hobby={h.label} className={styles.hobbyIconSvg} />
+              <HobbyIcon hobbyKey={h.icon} className={styles.hobbyIconSvg} />
             </span>
             {h.label}
           </div>

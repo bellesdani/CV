@@ -53,13 +53,13 @@
 .tag:hover {
   border-color: var(--accent2);
   color: var(--accent);
-  background: #14121e;
+  background: var(--surface-accent-bg);
 }
 
 .tagAccent {
-  border-color: #251f38;
+  border-color: var(--surface-accent-border);
   color: var(--accent);
-  background: #14121e;
+  background: var(--surface-accent-bg);
 }
 
 .infoGrid {
@@ -128,9 +128,9 @@
   border-radius: 5px;
   display: grid;
   place-items: center;
-  background: #12151d;
-  border: 1px solid #1f2534;
-  color: #8ea2d8;
+  background: var(--icon-bg);
+  border: 1px solid var(--icon-border);
+  color: var(--icon-color);
   flex-shrink: 0;
 }
 

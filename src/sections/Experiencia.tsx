@@ -1,16 +1,18 @@
-import { APTITUDES, AVAILABILITY, EDUCATION, EXPERIENCES } from '../assets/cv'
+import { useI18n } from '../i18n/I18nProvider'
 import SectionEyebrow from '../components/SectionEyebrow'
 import styles from '../styles/Experiencia.module.css'
 
 export default function Experiencia() {
+  const { content } = useI18n()
+
   return (
     <div className={styles.section}>
-      <SectionEyebrow label="// experiencia-y-formacion" />
+      <SectionEyebrow label={content.copy.experienceEyebrow} />
 
       <section className={styles.block}>
-        <h2 className={styles.blockTitle}>Formacion</h2>
+        <h2 className={styles.blockTitle}>{content.copy.educationHeading}</h2>
         <div className={styles.educationGrid}>
-          {EDUCATION.map(item => (
+          {content.education.map(item => (
             <article key={item.title} className={styles.educationCard}>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardMeta}>{item.center}</p>
@@ -22,9 +24,9 @@ export default function Experiencia() {
       </section>
 
       <section className={styles.block}>
-        <h2 className={styles.blockTitle}>Experiencia laboral</h2>
+        <h2 className={styles.blockTitle}>{content.copy.workExperienceHeading}</h2>
         <div className={styles.timeline}>
-          {EXPERIENCES.map(exp => (
+          {content.experiences.map(exp => (
             <article key={exp.company} className={styles.timelineItem}>
               <span className={styles.dot} aria-hidden />
               <div className={styles.experienceCard}>
@@ -52,9 +54,22 @@ export default function Experiencia() {
       </section>
 
       <section className={styles.block}>
-        <h2 className={styles.blockTitle}>Aptitudes</h2>
+        <h2 className={styles.blockTitle}>{content.copy.projectsHeading}</h2>
+        <p className={styles.projectsIntro}>{content.copy.projectsIntro}</p>
+        <div className={styles.projectsGrid}>
+          {content.projects.map(project => (
+            <article key={project.title} className={styles.projectCard}>
+              <h3 className={styles.cardTitle}>{project.title}</h3>
+              <p className={styles.projectDescription}>{project.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.block}>
+        <h2 className={styles.blockTitle}>{content.copy.aptitudesHeading}</h2>
         <div className={styles.skillsGrid}>
-          {APTITUDES.map(skill => (
+          {content.aptitudes.map(skill => (
             <span key={skill} className={styles.skillChip}>
               {skill}
             </span>
@@ -63,9 +78,9 @@ export default function Experiencia() {
       </section>
 
       <section className={styles.block}>
-        <h2 className={styles.blockTitle}>Disponibilidad</h2>
+        <h2 className={styles.blockTitle}>{content.copy.availabilityHeading}</h2>
         <ul className={styles.availabilityList}>
-          {AVAILABILITY.map(item => (
+          {content.availability.map(item => (
             <li key={item} className={styles.availabilityItem}>
               {item}
             </li>

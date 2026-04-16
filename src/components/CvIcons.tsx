@@ -7,7 +7,7 @@ interface StackIconProps extends IconProps {
 }
 
 interface HobbyIconProps extends IconProps {
-  hobby: string
+  hobbyKey: string
 }
 
 function CodeIcon({ className }: IconProps) {
@@ -116,22 +116,22 @@ export function StackIcon({ tech, className }: StackIconProps) {
 
   if (key === 'react' || key === 'angular') return <LayersIcon className={className} />
   if (key === 'javascript' || key === 'typescript' || key === 'html / css' || key === 'scss' || key === 'jquery') return <CodeIcon className={className} />
-  if (key === 'php' || key === 'apis rest') return <ServerIcon className={className} />
+  if (key === 'php' || key === 'rest apis' || key === 'apis rest') return <ServerIcon className={className} />
   if (key === 'git') return <GitIcon className={className} />
   if (key === 'unifi' || key === 'vlans') return <NetworkIcon className={className} />
-  if (key === 'soporte it') return <ToolIcon className={className} />
+  if (key === 'soporte it' || key === 'it support' || key === 'support it' || key === 'supporto it') return <ToolIcon className={className} />
 
   return <CodeIcon className={className} />
 }
 
-export function HobbyIcon({ hobby, className }: HobbyIconProps) {
-  const key = hobby.toLowerCase()
+export function HobbyIcon({ hobbyKey, className }: HobbyIconProps) {
+  const key = hobbyKey.toLowerCase()
 
-  if (key === 'entrenamiento') return <DumbbellIcon className={className} />
+  if (key === 'gym' || key === 'training' || key === 'entrenamiento' || key === 'allenamento') return <DumbbellIcon className={className} />
   if (key === 'surf') return <WaveIcon className={className} />
-  if (key === 'montana') return <MountainIcon className={className} />
-  if (key === 'futbol') return <BallIcon className={className} />
-  if (key === 'tecnologia') return <CpuIcon className={className} />
+  if (key === 'mtb' || key === 'montana' || key === 'mountains' || key === 'montagne' || key === 'montagna') return <MountainIcon className={className} />
+  if (key === 'fut' || key === 'futbol' || key === 'football' || key === 'calcio') return <BallIcon className={className} />
+  if (key === 'dev' || key === 'tecnologia' || key === 'technology' || key === 'technologie') return <CpuIcon className={className} />
 
   return <CpuIcon className={className} />
 }
