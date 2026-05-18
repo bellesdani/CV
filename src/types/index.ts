@@ -1,4 +1,4 @@
-export type SectionId = 'sobre-mi' | 'experiencia' | 'stack'
+export type SectionId = 'sobre-mi' | 'experiencia' | 'proyectos' | 'stack'
 export type Locale = 'es' | 'en' | 'fr' | 'it'
 
 export interface NavItem {
@@ -28,6 +28,16 @@ export interface Experience {
 export interface ProjectItem {
   title: string
   description: string
+  group: 'featured' | 'first'
+  media?: {
+    type: 'image' | 'video'
+    src: string
+    alt?: string
+  }
+  link?: {
+    href: string
+    label: string
+  }
 }
 
 export interface EducationItem {

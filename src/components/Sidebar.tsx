@@ -22,6 +22,12 @@ const NAV_ICONS: Record<SectionId, JSX.Element> = {
       <path d="M5 3V2h4v1" />
     </svg>
   ),
+  proyectos: (
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2">
+      <rect x="2" y="2" width="10" height="10" rx="1.5" />
+      <path d="M4 5h6M4 8h4M9.5 8.5l1.5 1.5" />
+    </svg>
+  ),
   stack: (
     <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2">
       <path d="M2 4l5-3 5 3-5 3-5-3zM2 7l5 3 5-3M2 10l5 3 5-3" />

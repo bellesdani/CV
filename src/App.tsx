@@ -4,6 +4,7 @@ import Topbar from './components/Topbar'
 import Sidebar from './components/Sidebar'
 import SobreMi from './sections/SobreMi'
 import Experiencia from './sections/Experiencia'
+import Proyectos from './sections/Proyectos'
 import styles from './styles/App.module.css'
 import Stack from './sections/Stack'
 import type { SectionId } from './types'
@@ -36,6 +37,7 @@ export default function App() {
       <main className={styles.main}>
         {active === 'sobre-mi'    && <SobreMi />}
         {active === 'experiencia' && <Experiencia />}
+        {active === 'proyectos' && <Proyectos />}
         {active === 'stack' && <Stack />}
       </main>
     </div>

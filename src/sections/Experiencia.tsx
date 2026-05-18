@@ -54,19 +54,6 @@ export default function Experiencia() {
       </section>
 
       <section className={styles.block}>
-        <h2 className={styles.blockTitle}>{content.copy.projectsHeading}</h2>
-        <p className={styles.projectsIntro}>{content.copy.projectsIntro}</p>
-        <div className={styles.projectsGrid}>
-          {content.projects.map(project => (
-            <article key={project.title} className={styles.projectCard}>
-              <h3 className={styles.cardTitle}>{project.title}</h3>
-              <p className={styles.projectDescription}>{project.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.block}>
         <h2 className={styles.blockTitle}>{content.copy.aptitudesHeading}</h2>
         <div className={styles.skillsGrid}>
           {content.aptitudes.map(skill => (
